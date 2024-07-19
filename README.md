@@ -5,7 +5,7 @@
 <p>
     Welcome to the “Advanced Application of JavaScript” project! In this project, you will build a dynamic To-Do List application that allows users to add, display, and remove tasks. This project focuses on utilizing advanced DOM manipulation techniques to interact dynamically with the webpage.
 
-    You will learn how to:
+You will learn how to:
     <ul>
         <li>
             Select and manipulate DOM elements using JavaScript
