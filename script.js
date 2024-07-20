@@ -32,5 +32,22 @@ document.addEventListener('DOMContentLoaded', function(){
         if(event.key === 'Enter'){
             addTask();
         }
-    });    
+    });
+    
+    
+
+    //Implementation of Local Storage for the To-Do List
+
+    function loadTask(){
+        const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+        storedTasks.forEach(taskText => addTask(taskText, false));
+    }
+
+    function addTask(taskText, save = true){
+        if (save){
+            const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+            storedTasks.push(taskText);
+            localStorage.setItem('tasks', JSON.stringify(storedTasks));
+        }
+    }
 });
