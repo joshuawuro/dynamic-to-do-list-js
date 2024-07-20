@@ -6,21 +6,24 @@ document.addEventListener('DOMContentLoaded', function(){
     function addTask(){
         const taskText = taskInput.value.trim();
         
-        if (isEmpty(taskInput)){
+        if (taskInput === ""){
             alert('Enter a new task');
-        } else {
-            const listItem = document.createElement('li');
-
-            listItem.textContent = taskText;
         }
 
-        const newButton = document.createElement('button');
-        newButton.textContent = 'Remove';
-        newButton.setAttribute('class', 'remove-btn');
+        const listItem = document.createElement('li');
+        listItem.textContent = taskText;
 
-        newButton.onclick = function(){
-            listItem = '';
+        const removeButton = document.createElement('button');
+        removeButton.textContent = "Remove";
+        removeButton.classList.add('remove-btn');
+
+        removeButton.onclick = function(){
+            taskList.removeChild(listItem);
         }
+
+        listItem.append(removeButton);
+        taskList.appendChild(listItem);
+        taskInput.value = "";
     }
 
     
