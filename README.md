@@ -111,7 +111,6 @@ Here is what your final output should look like
 </h1>
 <p>
     You are tasked with developing a To-Do List application that allows users to add tasks, display them, and remove tasks. This application will utilize advanced DOM manipulation techniques.
-
     <h2>
         Step-by-Step Guide
     </h2>
