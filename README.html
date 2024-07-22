@@ -99,78 +99,115 @@ Here is what your final output should look like
 <h1>
     HTML Code
 </h1>
+<img src="assets/Screenshot 2024-07-22 112353.png" alt="html code">
+
+<h1>
+    CSS Code
+</h1>
+<img src="assets/Screenshot 2024-07-22 112943.png" alt="css code">
+
+<h1>
+    Overview
+</h1>
 <p>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-    
-    #todo-app {
-        width: 100%;
-        max-width: 400px;
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    
-    #task-input {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    
-    #add-task-btn {
-        width: 100%;
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    
-    #add-task-btn:hover {
-        background-color: #0056b3;
-    }
-    
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    
-    li {
-        background-color: #eeeeee;
-        margin-top: 8px;
-        padding: 10px;
-        border-radius: 4px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .remove-btn {
-        cursor: pointer;
-        background-color: #ff6347;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        padding: 5px 10px;
-    }
-    
-    .remove-btn:hover {
-        background-color: #d9534f;
-    }
+    You are tasked with developing a To-Do List application that allows users to add tasks, display them, and remove tasks. This application will utilize advanced DOM manipulation techniques.
+
+    <h2>
+        Step-by-Step Guide
+    </h2>
+    <ol>
+        <li>
+            <h3>Setup Event Listener for Page Load:</h3>
+            <ul>
+                At the beginning of your script, use <strong>document.addEventListener</strong> to listen for the <strong>'DOMContentLoaded'</strong> event. This ensures your JavaScript code runs after the HTML document has fully loaded. Place all your subsequent code inside the callback function of this event listener
+            </ul>
+        </li>
+        <li>
+            <h3>Select DOM Elements:</h3>
+            <ul>
+                <li>
+                    Use <strong>document.getElementById</strong> to select the “Add Task” button and store it in a constant named <strong>addButton</strong>
+                </li>
+                <li>
+                    Similarly, select the input field where users enter tasks (<strong>id="task-input"</strong>) and the unordered list ( <strong>id="task-list"</strong> ) that will display the tasks. Store these references in constants named <strong>taskInput</strong> and <strong>taskList</strong>, respectively.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                Create the <strong>addTask</strong> Function:
+            </h3>
+            <ul>
+                <li>
+                    Define a function named <strong>addTask</strong>. This function will be responsible for adding new tasks to the list.
+                </li>
+                <li>
+                    Inside <strong>addTask</strong>, retrieve and trim the value from the task input field. Store this value in a variable named <strong>taskText</strong>.
+                </li>
+                <li>
+                    Check if <strong>taskText</strong> is not empty (""). If it is empty, use <strong>alert</strong> to prompt the user to enter a task.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                Task Creation and Removal:
+            </h3>
+            <ul>
+                <li>
+                    Within the addTask function, if taskText is not empty:
+                    <ul>
+                        <li>
+                            Create a new <strong>li</strong> element. Set its <strong>textContent</strong> to <strong>taskText</strong>.
+                        </li>
+                        <li>
+                            Create a new button element for removing the task. Set its <strong>textContent</strong> to <strong>"Remove"</strong>, and give it a class name of <strong>'remove-btn'</strong>.
+                        </li>
+                        <li>
+                            Assign an <strong>onclick</strong> event to the remove button that, when triggered, removes the <strong>li</strong> element from <strong>taskList</strong>.
+                        </li>
+                        <li>
+                            Append the remove button to the <strong>li</strong> element, then append the <strong>li/<strong> to <strong>taskList</strong>.
+                        </li>
+                        <li>
+                            Clear the task input field by setting <strong>taskInput.value</li>strong> to an empty
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>
+                Attach Event Listeners:
+            </h3>
+            <ul>
+                <li>
+                    Add an event listener to <strong>addButton</strong> that calls <strong>addTask</strong> when the button is clicked.
+                </li>
+                <li>
+                    Add an event listener to <strong>taskInput</strong> for the <strong>'keypress'</strong> event to allow tasks to be added by pressing the “Enter” key. Inside this event listener, check if <strong>event.key</strong> is equal to <strong>'Enter'</strong> before calling <strong>addTask</strong>.
+                </li>
+                <li>
+                    <strong>Invoke the addTask function on DOMContentLoaded</strong>. - Outside <strong>addTask</strong>, add an event listener to document for the DOMContentLoaded event. Set the callback function to invoke <strong>addTask</strong>. This ensures your data fetching logic runs once the HTML document has fully loaded.
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <h2>
+        Additional Instructions
+    </h2>
+    <ul>
+        <li>
+            <strong>Code Structure:</strong> Follow the provided code structure and naming conventions exactly as specified to ensure your solution aligns with the expected output.
+        </li>
+        <li>
+            <strong>Comments:</strong> Include comments in your code to describe the purpose of each major step or function, as shown in the example.
+        </li>
+        <li>
+            <strong>Testing:</strong> After completing your script, test the functionality of your To-Do List application by adding and removing tasks to ensure everything works as intended.
+        </li>
+    </ul>
 </p>
-
-
 
 
 
